@@ -1,0 +1,75 @@
+#include <iostream>
+  #include <ctime>
+  #include <stdlib.h>
+  #include <time.h>
+  using namespace std;
+  int main (){
+  int total;
+  int yes_no;
+  int hand;
+  int dhand;
+  int dtotal;
+  int y,n
+
+   srand(time(NULL));
+
+   cout<<"Welcome to Blackjack!"<<endl;
+
+   hand = rand()%13+1;
+   cout<<"Your first card is!:"<<hand<<endl;
+   do {
+
+       cout <<"Would you like another card? (y) for yes (n) for no";
+       cin >> yes_no;
+      if (yes_no == y)
+             hand = rand()%13+1;
+         cout <<"your next card is!:"<<hand<<endl;
+
+      if (hand > 10)
+         total=total+10;
+
+        else
+           total = hand +total;
+      cout<<"Current total is:"<<total<<endl;
+
+   } while (total < 21 && yes_no == y );
+
+     if (total < 22)
+     {
+       do {
+cout <<"Dealers Turn!";;
+                if (dtotal < 1)
+                dhand = rand()%13+1;
+                cout <<"Dealers cards!:"<<dhand<<endl;
+
+                if (dhand > 10)
+                        total=total+10;
+
+                else
+                dtotal = dhand +dtotal;
+                cout<<"Current total is:"<<dtotal<<endl;
+
+         }      while (total<17 && total <22);
+
+    }
+
+
+           do{
+
+                if (total > dtotal){
+                cout<< "You Win!:"<<endl;
+                }
+                        else if (total < dtotal){
+                        cout<< "Your lose!"<<endl;
+                        }
+                                if (total == 21){
+                                cout<< "Tie!"<<endl;
+                                 }
+                                        else if (total < 21){
+                                        cout<<" You Lose!"<<endl;
+                                        }
+
+           }
+
+return 0;
+}
